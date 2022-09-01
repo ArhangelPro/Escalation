@@ -1,3 +1,5 @@
+#Переписать по человечески с классами иразбить... как будет время
+#Добавить агент контряла запуска программы и функция обновления
 import webbrowser
 from tkinter import *
 from tkinter import messagebox
@@ -20,7 +22,7 @@ import logging
 
 logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
-f = open('text.txt', 'rt')
+f = open('file.fuck', 'rt')
 # Сформировать новый список
 lst = [] # сначала пустой список
 # Реализовать обход файла по строкам и считать числа.
@@ -28,16 +30,12 @@ lst = [] # сначала пустой список
 for s in f:
     # Убрать последний символ '\n' из s
     s = s.rstrip()
-
     # Вывести s для контроля
     # print(s)
-
     # Добавить строку s в список lst
     lst = lst + [s]
 logging.info('Письмо отправлено')
 f.close()
-
-
 colorl = lst[5]
 b0 = lst[0]
 b1 = lst[1]
@@ -52,32 +50,26 @@ color4 = lst[9]
 def Them():
     app = Tk()
     app.title("Настройки")
-    # colorl = '#FFFBF0'
-    # app['background'] = colorl    
     app.geometry('250x100')
     app['background'] = colorl
-    labelTop = Label(app, text = "Тема", fg=color2, bg=colorl)
-    
+    labelTop = Label(app, text = "Тема", fg=color2, bg=colorl)   
     labelTop.grid(column=0, row=0)
     comboExample = ttk.Combobox(app, values=["Светлая", "Темная"], width=9)
     comboExample.grid(column=0, row=1, padx=7, pady=10)
-
-    
     # comboExample.current(cc)
     if cc == 'light':
         comboExample.current(0)
     elif cc == 'dark':
         comboExample.current(1)
     # labelExample1 = Label(app, text="Customized Color",bg='red', fg=colorl)
-    # labelExample1.grid(column=0, row=2)
-    
+    # labelExample1.grid(column=0, row=2)  
     def callbackFunc(event):
         global colorl
         global b0
         global b1
         global b2
         global b3
-        global b4
+        global b4   
         
         if comboExample.get() == "Светлая":
             colorl=lst[5]
@@ -95,9 +87,7 @@ def Them():
             for s in lst:
                 # записать каждую строку в отдельную строку файла
                 f.write(s + '\n')
-            f.close()
-            
-       
+            f.close()            
         elif comboExample.get() == "Темная":
             lst[5] = '#242f3d'
             lst[0] = 'button_gtp-bia (1).png'
@@ -115,7 +105,6 @@ def Them():
                 f.write(s + '\n')
             f.close()
             
-                                  
     comboExample.bind("<<ComboboxSelected>>", callbackFunc)
     
     def bgBlack():
@@ -126,20 +115,15 @@ def Them():
     
     button_select = Button(app,text="Применить", command=bgBlack, fg=colorl, bg=color2) 
     button_select.grid(row=2, column=0, padx=10, pady=5, sticky="w")
-    # def selection():
-
-    
-    # labelValue = Label(app, textvariable=radioValue)
-    # labelValue.grid(column=2, row=0, sticky="E", padx=40)
     app.mainloop()
            
 def export():
     shutil.copyfile(r'.\bkp\filestrs111.txt', r'filestrs111.txt')
     shutil.copyfile(r'.\bkp\text.txt', r'text.txt')
 def update():
-    messagebox.showinfo("Обновление", "Обновление не доступно для данной версии программы")
+    messagebox.showinfo("Обновление") #Привязать мудуль обновы 
 def helpi():
-     webbrowser.open_new("https://www.google.com/") #Ссылка на Инструкцию по Эскалации
+     webbrowser.open_new("https://****") #Ссылка на Инструкцию по Эскалации
 def about():
     a = Toplevel()
     w = a.winfo_screenwidth()
@@ -153,7 +137,7 @@ def about():
     a['bg'] = colorl
     label1 = Label(a, text = "Здесь должна быть информация. о программе...", fg=color2, bg=colorl)
     label1.pack()
-    poetry = "\nНо..., мне лень печатать и вот Вам Гёте:\n\nВот мысль, которой весь я предан,\nИтог всего, что ум скопил.\nЛишь тот, кем бой за жизнь изведан,\nЖизнь и свободу заслужил."
+    poetry = "\nНо..., мне лень печатать... Уже поздно, расскажу устно"
     label2 = Label(a, text=poetry, justify=LEFT, fg=color2, bg=colorl)
     label2.place(relx=.10, rely=.1)
     a.overrideredirect(False)
@@ -177,27 +161,24 @@ def select():
         sel.config(text="Статусу", bg=colorl, font=("Pagella", 9, 'bold'))
 def addrbook():
     adr = Tk()
-    adr.title("Дерьмо")
+    adr.title("Придумать название")
     adr.geometry("300x100")
     adr['background'] = colorl
     f1 = open('filestrs111.txt', 'rt') #encoding="utf-8"
-    # 6. Сформировать новый список
+    # Сформировать новый список
     lst21 = []
     # сначала пустой список
-
-    # 7. Реализовать обход файла по строкам и считать числа.
+    # Реализовать обход файла по строкам и считать числа.
     # Для чтения строк используется итератор файла.
     for s1 in f1:
         # Убрать последний символ '\n' из s
         s1 = s1.rstrip()
-
         # Вывести s для контроля
-        # print(s)
-
+        # print(s) Проверка
         # Добавить строку s в список lst2
         lst21 = lst21 + [s1]
 
-    # 8. Вывести список lst2 для контроля
+    #Вывести список lst2 для контроля
     #print(lst2[2])
     lst21_len = len(lst21)
     i1=0
@@ -227,9 +208,8 @@ def addrbook():
         add3.attributes("-topmost", True)
         def add4():
             name2 = str(name_entry2.get()) 
-            surname2 = str(surname_entry2.get())
-           
-            def match(surname2, alphabet=set('абвгдеёжзийклмнопрстуфхцчшщъыьэюя"!#$%&\"/*+/=?^`{|}~" "\\')):
+            surname2 = str(surname_entry2.get())    
+            def match(surname2, alphabet=set('абвгдеёжзийклмнопрстуфхцчшщъыьэюя"!#$%&\"/*+/=?^`{|}~" "\\')): # Сократить по принципу (А-я)
                 return not alphabet.isdisjoint(surname2.lower())
             if name2 != 1:
                 messagebox.showinfo("Ошибка ввода", "Введите корректный номер заявки!")
@@ -262,7 +242,6 @@ def addrbook():
         f1.close() 
         adr.destroy()
         add3.mainloop()
-
 
     def sort():
         try:
@@ -335,38 +314,9 @@ def copy():
     time.sleep(1)
     root.update() 
     
-####################  для проверки шаблона 
-def display():
-    # body_text = ""
-    # isp = 'Исполнителя'
-    # y = str(surname_entry.get())
-    # s = str(name_entry.get())
-    # x = len(s)
-    # if stat.get() == 1:
-        # es_type = 'срочности проведения работ.'
-        # es_work = 'провести работы по заявке БП Инцидент в первую очередь.'
-    # elif stat.get() == 2:
-        # es_type = 'непонятном статусе заявки.'
-        # es_work = 'предоставить заказчику информацию о текущем статусе по заявке в БП Инцидент со сроками выполнения.'
-    # else:
-        # sel.config(text="Статус не выбран!")
-    # def match(y, alphabet=set('абвгдеёжзийклмнопрстуфхцчшщъыьэюя"!#$%&\"/*+/=?^`{|}~" "\\')):
-        # return not alphabet.isdisjoint(y.lower())
-    # if x != 9:
-        # messagebox.showinfo("Ошибка ввода", "Введите корректный номер заявки!")
-        # return
-    # elif s.isnumeric() == False:
-        # messagebox.showinfo("Ошибка ввода", "В номере заявки должны присутвовать только цифры")
-        # return
-    # elif match(y) == True:
-        # messagebox.showinfo("Ошибка ввода", "В адресе присутствуют некорректные символы!")
-        # return
-    # elif "@" not in y:
-        # messagebox.showinfo("Ошибка ввода", "Введите корректный адрес!")
-        # return
-    # elif '.ru' not in y:
-        # messagebox.showinfo("Ошибка ввода", "Введите корректный адрес!")
-        # return
+####################  для проверки шаблона, выпилить
+#Wdef display():
+    
     body_text = ""
     isp = 'Исполнителя'
     y = str(surname_entry.get())
@@ -432,8 +382,9 @@ def send_mail():
     elif "@" not in y:
         mentry.get()
         return
-    # elif '.ru' not in y:
-    #     messagebox.showinfo("Ошибка ввода", "Введите корректный адрес!")
+     else:
+        messagebox.showinfo("Ошибка", "Что-то новое!") 
+ox.showinfo("Ошибка ввода", "Введите корректный адрес!")
     #     return
     cc_adress = ''
     mai = []
@@ -469,9 +420,8 @@ def send_mail():
     time.sleep(1)
     progress_bar['value'] = 0
     root.update() 
-    
-    
-#Контекстноке меню начато
+     
+#Контекстное меню начато
 class AddPopupMenu:
     def copy_selection(self):
         try:
