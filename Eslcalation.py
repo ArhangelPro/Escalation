@@ -12,7 +12,6 @@ import pyperclip
 import pyautogui
 import pymouse,pykeyboard,os,sys
 from pymouse import *
-#from pykeyboard import PyKeyboard
 import json
 import codecs
 import shutil
